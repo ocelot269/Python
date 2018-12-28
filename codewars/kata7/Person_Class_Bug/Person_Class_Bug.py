@@ -8,6 +8,7 @@ class Person():
 
 matz = Person('Yukihiro', 'Matsumoto', 47)
 joe = Person('Joe', 'Smith', 30)
+
 if __name__ == '__main__':
 
     assert matz.full_name == 'Yukihiro Matsumoto'
