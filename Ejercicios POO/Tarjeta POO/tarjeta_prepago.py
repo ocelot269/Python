@@ -29,5 +29,5 @@ if __name__ == '__main__':
 
         # casos test
     tarjeta = Tarjeta_prepago("653333333", "42224953-L", 1000)
-    tarjeta.IngresarSaldo(1000)
-    assert tarjeta.getSaldo()== 2000
+    tarjeta.IngresarSaldo(10000)
+    assert tarjeta.getSaldo() == 11000
