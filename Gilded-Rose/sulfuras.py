@@ -1,3 +1,5 @@
+from regularitem   import RegularItem
+
 class Sulfuras():
 
     def __init__(self, name, sell_in, quality):
