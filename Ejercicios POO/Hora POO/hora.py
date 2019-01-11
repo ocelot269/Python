@@ -16,9 +16,6 @@ class Hora():
     def getSegundos(self):
         return self.segundos
 
-    def (self):
-        pass
-
 
     def setHora(self, hora, minutos, segundos):
         if self.__hora > 24 or self.__minutos > 59 or self.__segundos > 59:
@@ -37,4 +34,4 @@ if __name__ == '__main__':
     hora2 = Hora(24, 23, 21)
 
     print(hora1.imprimirHora())
-    assert hora1.imprimirHora() == 0:0:0
+
