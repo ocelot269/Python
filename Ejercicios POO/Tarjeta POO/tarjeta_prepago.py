@@ -31,7 +31,7 @@ class Tarjeta_prepago():
         self.setSaldo(dinero)
 
     def enviarMensaje(self, n_mensajes):
-        # Este metodo resta al saldo el consumo de los mensajes 
+        # Este metodo resta al saldo el consumo de los mensajes
         # al principio para que el total se convierta en negativo
         self.setSaldo(-(n_mensajes * 9) / 100)
 
@@ -40,7 +40,8 @@ class Tarjeta_prepago():
         self.setConsumo((segundos + 15) / 100)
 
     def consultarTarjeta(self):
-        print("Tu saldo es %s€ y el consumo al numero de telefono %s es %s€ con dni %s" % (self.getSaldo(),self.getN_telefono(),self.getConsumo(),self.getNif())) 
+        print("Tu saldo es %s€ y el consumo al numero de telefono %s es %s€ con dni %s" % (
+            self.getSaldo(), self.getN_telefono(), self.getConsumo(), self.getNif()))
 
 if __name__ == '__main__':
 
@@ -50,7 +51,6 @@ if __name__ == '__main__':
     tarjeta.realizarLlamada(65)
     tarjeta.consultarTarjeta()
     assert tarjeta.getSaldo() == 10999.2
-
 
     tarjeta1 = Tarjeta_prepago("653333333", "42224953-L", 1000)
     tarjeta1.ingresarSaldo(1)

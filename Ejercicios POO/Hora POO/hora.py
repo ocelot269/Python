@@ -1,37 +1,53 @@
 class Hora():
 
-    def __init__(self, hora, minutos, segundos):
-        self.__horas = 00
-        self.__minutos = 00
-        self.__segundos = 00
+    def __init__(self, horas, minutos, segundos):
+        self.hora = 0
+        self.minuto = 0
+        self.segundos = 0
 
-    def __repr__(self, hora, minutos):
-        return "%s,%s,%s" % (self.__hora, self.__minutos, self.__segundos)
-
-    def getHora(self):
-        return self.__horas
+    def getHoras(self):
+        return self.hora
 
     def getMinuto(self):
-        return self.minutos
+        return self.minuto
+
     def getSegundos(self):
         return self.segundos
 
+    def setSegundos(self, segundos):
+        self.segundos += segundos
 
-    def setHora(self, hora, minutos, segundos):
-        if self.__hora > 24 or self.__minutos > 59 or self.__segundos > 59:
-            return 0
+    def setMinuto(self, minutos):
+        self.minuto += minutos
 
+    def setHoras(self, horas):
+        self.hora += horas
 
+    def setHora(self, hora, minutos, segundos):  # Muestra toda la hora al completo en string
+        if self.setHoras(hora) < 25:
+            self.setHoras(hora)
+        elif self.setHoras(hora) > 59 :
+            self.setHoras(0)
+        if self.setMinuto(minutos) < 60:
+            self.setMinutos(minutos)
+        elif self.setMinuto(minutos) > 59:
+            self.setMinutos(0)
+            self.setHoras(1)
+        if self.setSegundos(segundos) < 60:
+            self.setSegundos(segundos)
+        elif self.setSegundos(segundos) > 59:
+            self.setSegundos(0)
+            self.setMinuto(1)
 
-    def imprimirHora(self):
-        print(str(self.__hora) + ":" + str(self.__minutos) +
-              ":" + str(self.__segundos))
+    def getHora(self):
+        return str(self.getHoras()) + ":" + str(self.getMinuto()) + ":" + str(self.getSegundos())
+
 
 if __name__ == '__main__':
 
-        # Casos test
-    hora1 = Hora(25, 00, 15)
-    hora2 = Hora(24, 23, 21)
-
-    print(hora1.imprimirHora())
-
+    hora1 = Hora(12, 00, 21)
+    hora1.getSegundos()
+    hora1.getMinuto()
+    hora1.getHoras()
+    assert hora1.getHora() == "0:0:0"
+    #hora1.setHora()
